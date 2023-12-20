@@ -9,4 +9,6 @@ RUN git clone --depth=1 https://github.com/ltdrdata/ComfyUI-Manager
 RUN git clone --depth=1 https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 
 WORKDIR /usr/src/app/ComfyUI
-ENTRYPOINT ["python", "main.py", "--port", "8000"]
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+ENTRYPOINT ["python", "main.py", "--port", "8000", "--listen", "0.0.0.0"]
