@@ -1,0 +1,65 @@
+# modified from https://github.com/coreweave/doc-examples/blob/main/machine-learning/inference/mistral-7b/mistral-7b.yaml
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: comfyui
+  annotations:
+    networking.knative.dev/ingress-class: kourier.ingress.networking.knative.dev
+  labels:
+    knative.coreweave.cloud/ingress: kourier.ingress.networking.knative.dev
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "1"
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: gpu.nvidia.com/class
+                    operator: In
+                    values:
+                      - RTX_A5000
+      containers:
+        - name: main
+          #image: ghcr.io/mistralai/mistral-src/vllm:288c7c
+          image: ghcr.io/dmarx/comfyui-cw:sha256-ba79509effd18701e71dd57697d48103b532b3fac3087c24bb1c1ebee76c6968.sig
+          # args:
+          #   - "--host"
+          #   - "0.0.0.0"
+          #   - "--model"
+          #   - "mistralai/Mistral-7B-v0.1"
+          resources:
+            requests:
+              cpu: 4
+              memory: 16Gi
+              nvidia.com/gpu: 1
+            limits:
+              cpu: 4
+              memory: 16Gi
+              nvidia.com/gpu: 1
+          ports:
+            - protocol: TCP
+              containerPort: 8000
+          # livenessProbe:
+          #   httpGet:
+          #     path: /v1/models
+          #     port: 8000
+          #   initialDelaySeconds: 30
+          #   periodSeconds: 30
+          # readinessProbe:
+          #   httpGet:
+          #     path: /v1/models
+          #     port: 8000
+          #   initialDelaySeconds: 30
+          #   periodSeconds: 30
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: token
+                  name: hugging-face-token
