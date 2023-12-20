@@ -9,4 +9,4 @@ RUN git clone --depth=1 https://github.com/ltdrdata/ComfyUI-Manager
 RUN git clone --depth=1 https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 
 WORKDIR /usr/src/app/ComfyUI
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["python", "main.py", "--port", "8000"]
