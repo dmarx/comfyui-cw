@@ -27,7 +27,7 @@ spec:
       containers:
         - name: main
           #image: ghcr.io/mistralai/mistral-src/vllm:288c7c
-          image: ghcr.io/dmarx/comfyui-cw:sha256-ba79509effd18701e71dd57697d48103b532b3fac3087c24bb1c1ebee76c6968.sig
+          image: ghcr.io/dmarx/comfyui-cw:main
           # args:
           #   - "--host"
           #   - "0.0.0.0"
