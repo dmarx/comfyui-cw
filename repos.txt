@@ -10,8 +10,8 @@ https://github.com/cubiq/ComfyUI_IPAdapter_plus
 #https://github.com/ssitu/ComfyUI_UltimateSDUpscale
 #https://github.com/space-nuko/ComfyUI-OpenPose-Editor
 https://github.com/civitai/comfy-nodes
-#https://github.com/Acly/comfyui-tooling-nodes
-#https://github.com/talesofai/comfyui-browser
+https://github.com/Acly/comfyui-tooling-nodes
+https://github.com/talesofai/comfyui-browser
 #https://github.com/storyicon/comfyui_segment_anything
 # https://github.com/whmc76/ComfyUI-Openpose-Editor-Plus
 # https://github.com/banodoco/steerable-motion
