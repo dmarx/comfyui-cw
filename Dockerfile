@@ -50,4 +50,6 @@ RUN git clone --depth=1 https://github.com/storyicon/comfyui_segment_anything
 # </optionalExtensions>
 ###########################################
 
+WORKDIR /usr/src/app/ComfyUI
+
 ENTRYPOINT ["python", "main.py", "--port", "8000", "--listen", "0.0.0.0"]
