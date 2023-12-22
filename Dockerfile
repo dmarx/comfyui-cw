@@ -1,5 +1,6 @@
-FROM ghcr.io/coreweave/ml-containers/torch:f35193e-base-cuda12.2.2-torch2.1.1-vision0.16.1-audio2.1.1
-#FROM python:3.10.13-alpine3.19
+#FROM ghcr.io/coreweave/ml-containers/torch:f35193e-base-cuda12.2.2-torch2.1.1-vision0.16.1-audio2.1.1
+# for python 3.10
+FROM ghcr.io/coreweave/ml-containers/torch-extras:es-22.04-3ce72cc-nccl-cuda12.2.2-nccl2.19.3-1-torch2.1.2-vision0.16.2-audio2.1.2-flash_attn2.3.6
 
 RUN mkdir -p /usr/src/app
 
