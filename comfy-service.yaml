@@ -28,7 +28,9 @@ spec:
         - name: main
           #image: ghcr.io/mistralai/mistral-src/vllm:288c7c
           image: ghcr.io/dmarx/comfyui-cw:main
-          # args:
+          args:
+              - "-output-directory"
+              - "/storage"
           #   - "--host"
           #   - "0.0.0.0"
           #   - "--model"
