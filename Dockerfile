@@ -1,4 +1,7 @@
-FROM ghcr.io/coreweave/ml-containers/torch:f35193e-base-cuda12.2.2-torch2.1.1-vision0.16.1-audio2.1.1
+#FROM ghcr.io/coreweave/ml-containers/torch:f35193e-base-cuda12.2.2-torch2.1.1-vision0.16.1-audio2.1.1
+FROM python:3.10.13-alpine3.19
+
+RUN mkdir -p /usr/src/app
 
 # this should already by the WORKDIR
 WORKDIR /usr/src/app
