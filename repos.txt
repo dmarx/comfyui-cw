@@ -8,7 +8,7 @@ https://github.com/cubiq/ComfyUI_IPAdapter_plus
 #https://github.com/WASasquatch/was-node-suite-comfyui
 #https://github.com/Fannovel16/comfyui_controlnet_aux
 #https://github.com/ssitu/ComfyUI_UltimateSDUpscale
-#https://github.com/space-nuko/ComfyUI-OpenPose-Editor
+https://github.com/space-nuko/ComfyUI-OpenPose-Editor
 https://github.com/civitai/comfy-nodes
 https://github.com/Acly/comfyui-tooling-nodes
 https://github.com/talesofai/comfyui-browser
