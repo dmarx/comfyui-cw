@@ -14,6 +14,7 @@ https://github.com/Acly/comfyui-tooling-nodes
 https://github.com/talesofai/comfyui-browser
 https://github.com/storyicon/comfyui_segment_anything
 #https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
+https://github.com/subtleGradient/TinkerBot-tech-for-ComfyUI-Touchpad
 ##########################################################
 # https://github.com/whmc76/ComfyUI-Openpose-Editor-Plus
 # https://github.com/banodoco/steerable-motion
