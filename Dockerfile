@@ -24,5 +24,11 @@ RUN /install_script.sh
 #RUN mkdir /mnt/storage
 #RUN mount -t nfs -o vers=4.2,noatime,nodiratime,nolock comfyui-atorage-nfs-mount:/storage /mnt/storage
 
+#WORKDIR /usr/src/app/ComfyUI
+#ENTRYPOINT ["python", "main.py", "--port", "8000", "--listen", "0.0.0.0"]
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+#RUN /entrypoint.sh
 WORKDIR /usr/src/app/ComfyUI
-ENTRYPOINT ["python", "main.py", "--port", "8000", "--listen", "0.0.0.0"]
+ENTRYPOINT ["/entrypoint.sh"]
