@@ -7,4 +7,4 @@ mount -t nfs -o vers=4.2,noatime,nodiratime,nolock comfyui-atorage-nfs-mount:/st
 cd /usr/src/app/ComfyUI
 
 # todo: pass in command line arguments
-python main.py --port 8000 --listen 0.0.0.0
+python main.py --port 8000 --listen 0.0.0.0 --output-directory "/storage"
