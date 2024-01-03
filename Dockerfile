@@ -20,9 +20,9 @@ RUN chmod +x /install_script.sh
 RUN /install_script.sh
 
 # use cw catalog to launch NFS server to mount PVC
-# this probably needs to get moved into the entrypoint script
-RUN mkdir /mnt/storage
-RUN mount -t nfs -o vers=4.2,noatime,nodiratime,nolock comfyui-atorage-nfs-mount:/storage /mnt/storage
+# this probably needs to get moved into the entrypoint script. EDIT: ...yup
+#RUN mkdir /mnt/storage
+#RUN mount -t nfs -o vers=4.2,noatime,nodiratime,nolock comfyui-atorage-nfs-mount:/storage /mnt/storage
 
 WORKDIR /usr/src/app/ComfyUI
 ENTRYPOINT ["python", "main.py", "--port", "8000", "--listen", "0.0.0.0"]
