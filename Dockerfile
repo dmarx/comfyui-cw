@@ -27,8 +27,8 @@ RUN /install_script.sh
 #WORKDIR /usr/src/app/ComfyUI
 #ENTRYPOINT ["python", "main.py", "--port", "8000", "--listen", "0.0.0.0"]
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-#RUN /entrypoint.sh
+#COPY entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
+##RUN /entrypoint.sh
 WORKDIR /usr/src/app/ComfyUI
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
